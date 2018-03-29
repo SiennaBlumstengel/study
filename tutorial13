@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class Person {
+	String name;
+	int age;
+	String favFood;
+}
+
+public class Application {
+	public static void main(String[] args) {
+
+		// Create scanner object
+		Scanner input = new Scanner(System.in);
+
+		// Output the prompt
+		System.out.println("Enter your name: ");
+
+		// Wait for the user to enter name
+		Person person1 = new Person();
+		person1.name = input.nextLine();
+		person1.age = 37;
+		person1.favFood = "Cheese";
+
+		// greet and prompt to enter command
+		System.out.println("Hello, " + person1.name
+				+ ".\nPlease enter one of the following commands: ");
+		System.out.println("show age\nshow name\nshow favourite food");
+
+		// Wait for the user to enter command
+		String command = input.nextLine();
+
+		// commands
+		switch (command) {
+
+		case "show age":
+			System.out.println(person1.age);
+			break;
+
+		case "show name":
+			System.out.println(person1.name);
+			break;
+
+		case "show favourite food":
+			System.out.println(person1.favFood);
+			break;
+			
+		default:
+			System.out.println("Command not recognized.");
+		}
+	}
+}
